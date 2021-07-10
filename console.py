@@ -19,6 +19,8 @@ adventurer_repository.save(adventurer_1)
 # adventurer_3 = Adventurer("Grog", "Strongjaw", "Barbarian")
 # adventurer_repository.save(adventurer_3)
 
-adventurers = adventurer_repository.select_all()
+# adventurers = adventurer_repository.select_all()
+
+adventurer = adventurer_repository.select(1)
 
 pdb.set_trace()

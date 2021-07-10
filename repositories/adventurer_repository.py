@@ -26,6 +26,15 @@ def select_all():
     return adventurers
 
 ##select adventurer(id)
+def select(id):
+    adventurer = None
+    sql = "SELECT * FROM adventurers WHERE id = %s"
+    values=[id]
+    result = run_sql(sql, values)[0]
+
+    if result != None:
+        adventurer = Adventurer(result['first_name'], result['last_name'], result['adventurer_class'], result['id'])
+    return adventurer
 
 #UPDATE
 ##update adventurer
