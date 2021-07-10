@@ -32,4 +32,8 @@ def select_all():
 
 #DELETE
 ##delete all
+def delete_all():
+    sql = "DELETE FROM adventurers"
+    run_sql(sql)
+
 #delete adventurer(id)
