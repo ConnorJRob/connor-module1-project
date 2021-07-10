@@ -1,3 +1,4 @@
+from models.adventurer import Adventurer
 from db.run_sql import run_sql
 
 from models.lesson import Lesson
@@ -14,6 +15,16 @@ def save(adventurer):
 
 ##READ
 ##select all adventurers
+def select_all():
+    adventurers = []
+
+    sql = "SELECT * FROM adventurers"
+    results = run_sql(sql)
+    for row in results:
+        adventurer = Adventurer(row['first_name'], row['last_name'], row['adventurer_class'], row['id'])
+        adventurers.append(adventurer)
+    return adventurers
+
 ##select adventurer(id)
 
 #UPDATE
