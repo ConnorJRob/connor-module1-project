@@ -45,4 +45,8 @@ def delete_all():
     sql = "DELETE FROM adventurers"
     run_sql(sql)
 
-#delete adventurer(id)
+# delete adventurer(id)
+def delete_adventurer(id):   
+    sql = "DELETE FROM adventurers WHERE id = %s"
+    values = [id]
+    run_sql(sql, values)

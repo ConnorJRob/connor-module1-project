@@ -8,10 +8,10 @@ import repositories.lesson_repository as lesson_repository
 import repositories.enrolment_repository as enrolment_repository
 
 
-adventurer_repository.delete_all()
+# adventurer_repository.delete_all()
 
-adventurer_1 = Adventurer("Zimazz", "Greenwind", "Wizard")
-adventurer_repository.save(adventurer_1)
+# adventurer_1 = Adventurer("Zimazz", "Greenwind", "Wizard")
+# adventurer_repository.save(adventurer_1)
 
 # adventurer_2 = Adventurer("Eldak", "Belzor", "Ranger")
 # adventurer_repository.save(adventurer_2)
@@ -21,6 +21,10 @@ adventurer_repository.save(adventurer_1)
 
 # adventurers = adventurer_repository.select_all()
 
-adventurer = adventurer_repository.select(1)
+# adventurer = adventurer_repository.select(1)
+
+# adventurer_repository.delete_adventurer(2)
+
+adventurers = adventurer_repository.select_all()
 
 pdb.set_trace()
