@@ -27,7 +27,7 @@ import repositories.enrolment_repository as enrolment_repository
 
 # adventurer_repository.delete_adventurer(1)
 
-# adventurer_repository.update(adventurer_to_update)
+# adventurer_repository.update_adventurer(adventurer_to_update)
 
 adventurers = adventurer_repository.select_all()
 
