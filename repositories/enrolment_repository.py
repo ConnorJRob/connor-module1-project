@@ -4,15 +4,15 @@ from models.lesson import Lesson
 from models.adventurer import Adventurer
 
 ##CREATE
-##save lesson
+##save enrolment
 
 ##READ
-##select all lessons
-##select lesson(id)
+##select all enrolments
+##select enrolment(id)
 
 #UPDATE
-##update lesson
+##update enrolment
 
 #DELETE
 ##delete all
-#delete lesson(id)
+#delete enrolment(id)
