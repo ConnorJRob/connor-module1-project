@@ -2,7 +2,6 @@ from repositories.enrolment_repository import adventurer
 from db.run_sql import run_sql
 from models.adventurer import Adventurer
 from models.lesson import Lesson
-from models.enrolment import Enrolment
 
 ##CREATE
 ##save lesson
