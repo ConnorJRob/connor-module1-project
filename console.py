@@ -35,11 +35,19 @@ import repositories.enrolment_repository as enrolment_repository
 
 # lesson_repository.save(lesson_1)
 
-lesson_1 = lesson_repository.select(1)
+# lesson_2 = Lesson("How and when to use Fireball", "Wizards", "Not all the time.")
 
-lesson_1.lesson_description = "SPEAKING ORC, THIS IS A TEST"
+# lesson_repository.save(lesson_2)
 
-lesson_repository.update_lesson(lesson_1)
+# lesson_3 = Lesson("When is it a mimic?", "Bards", "Assume always.")
+
+# lesson_repository.save(lesson_3)
+
+lesson_repository.delete_lesson(8)
+
+# lesson_1.lesson_description = "SPEAKING ORC, THIS IS A TEST"
+
+# lesson_repository.update_lesson(lesson_1)
 
 lessons = lesson_repository.select_all()
 

@@ -45,11 +45,13 @@ def update_lesson(lesson):
 
 #DELETE
 ##delete all
+def delete_all():
+    sql = "DELETE FROM lessons"
+    run_sql(sql)
+
 #delete lesson(id)
 
-# CREATE TABLE lessons (
-#     id SERIAL PRIMARY KEY,
-#     lesson_name VARCHAR(255),
-#     recommended_for VARCHAR(255),
-#     lesson_description TEXT
-# );
+def delete_lesson(id):   
+    sql = "DELETE FROM lessons WHERE id = %s"
+    values = [id]
+    run_sql(sql, values)
