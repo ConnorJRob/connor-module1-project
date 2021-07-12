@@ -25,6 +25,15 @@ def select_all():
     return lessons
 
 ##select lesson(id)
+def select(id):
+    lesson = None
+    sql = "SELECT * FROM lessons WHERE id = %s"
+    values = [id]
+    result = run_sql(sql, values)[0]
+
+    if result != None:
+        lesson = Lesson(result['lesson_name'], result['recommended_for'], result['lesson_description'], result['id'])
+    return lesson
 
 #UPDATE
 ##update lesson

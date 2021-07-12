@@ -35,6 +35,8 @@ lesson_1 = Lesson("Orcish for Beginners", "Wizards", "A beginner's class in spea
 
 lesson_repository.save(lesson_1)
 
-lessons = lesson_repository.select_all()
+lesson_1 = lesson_repository.select(1)
+
+# lessons = lesson_repository.select_all()
 
 pdb.set_trace()
