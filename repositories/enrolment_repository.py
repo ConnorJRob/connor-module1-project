@@ -61,4 +61,12 @@ def adventurer(enrolment):
 
 #DELETE
 ##delete all
+def delete_all():
+    sql = "DELETE FROM enrolments"
+    run_sql(sql)
+
 #delete enrolment(id)
+def delete(id):
+    sql = "DELETE FROM enrolments WHERE id = %s"
+    values = [id]
+    run_sql(sql, values)

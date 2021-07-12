@@ -39,16 +39,20 @@ import repositories.enrolment_repository as enrolment_repository
 
 # enrolments = enrolment_repository.select_all()
 
-Zimazz_enrolment = enrolment_repository.select(1)
-Eldak_enrolment = enrolment_repository.select(2)
-Grog_enrolment = enrolment_repository.select(3)
+# Zimazz_enrolment = enrolment_repository.select(1)
+# Eldak_enrolment = enrolment_repository.select(2)
+# Grog_enrolment = enrolment_repository.select(3)
 
-What_lesson = enrolment_repository.lesson(Zimazz_enrolment)
-What_lesson_Eldak = enrolment_repository.lesson(Eldak_enrolment)
-What_lesson_Grog = enrolment_repository.lesson(Grog_enrolment)
+# What_lesson = enrolment_repository.lesson(Zimazz_enrolment)
+# What_lesson_Eldak = enrolment_repository.lesson(Eldak_enrolment)
+# What_lesson_Grog = enrolment_repository.lesson(Grog_enrolment)
 
-What_adventurer_1 = enrolment_repository.adventurer(Zimazz_enrolment)
-What_adventurer_2 = enrolment_repository.adventurer(Eldak_enrolment)
-What_adventurer_3 = enrolment_repository.adventurer(Grog_enrolment)
+# What_adventurer_1 = enrolment_repository.adventurer(Zimazz_enrolment)
+# What_adventurer_2 = enrolment_repository.adventurer(Eldak_enrolment)
+# What_adventurer_3 = enrolment_repository.adventurer(Grog_enrolment)
+
+enrolment_repository.delete_all()
+
+enrolments = enrolment_repository.select_all()
 
 pdb.set_trace()
