@@ -1,4 +1,3 @@
-import re
 from flask import Flask, render_template
 
 from controllers.adventurer_controller import adventurers_blueprint
