@@ -1,3 +1,4 @@
+from repositories.enrolment_repository import adventurer
 from db.run_sql import run_sql
 from models.adventurer import Adventurer
 from models.lesson import Lesson
@@ -36,6 +37,18 @@ def select(id):
     return lesson
 
 ##return all adventurers that have enrolled in a specific lesson
+def adventurers(lesson):
+    adventurers = []
+
+    sql = "SELECT adventurers.* FROM adventurers INNER JOIN enrolments ON enrolments.adventurer_id = adventurers.id WHERE lesson_id = %s"
+    values = [lesson.id]
+    results = run_sql(sql, values)
+
+    for row in results:
+        adventurer = Adventurer(row['first_name'], row['last_name'], row['adventurer_class'], row['id'])
+        adventurers.append(adventurer)
+    return adventurers
+
 
 #UPDATE
 ##update lesson
