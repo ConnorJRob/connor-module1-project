@@ -1,7 +1,7 @@
 from db.run_sql import run_sql
-
-from models.lesson import Lesson
 from models.adventurer import Adventurer
+from models.lesson import Lesson
+from models.enrolment import Enrolment
 
 ##CREATE
 ##save enrolment

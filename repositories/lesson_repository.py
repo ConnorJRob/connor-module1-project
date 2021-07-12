@@ -1,6 +1,6 @@
 from db.run_sql import run_sql
-
 from models.adventurer import Adventurer
+from models.lesson import Lesson
 from models.enrolment import Enrolment
 
 ##CREATE
@@ -14,6 +14,16 @@ def save(lesson):
 
 ##READ
 ##select all lessons
+def select_all():
+    lessons = []
+
+    sql = "SELECT * FROM lessons"
+    results = run_sql(sql)
+    for row in results:
+        lesson = Lesson(row['lesson_name'], row['recommended_for'], row['lesson_description'], row['id'])
+        lessons.append(lesson)
+    return lessons
+
 ##select lesson(id)
 
 #UPDATE

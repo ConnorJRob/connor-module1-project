@@ -29,6 +29,12 @@ import repositories.enrolment_repository as enrolment_repository
 
 # adventurer_repository.update_adventurer(adventurer_to_update)
 
-adventurers = adventurer_repository.select_all()
+# adventurers = adventurer_repository.select_all()
+
+lesson_1 = Lesson("Orcish for Beginners", "Wizards", "A beginner's class in speaking Orcish, making sure to avoid getting killed for saying something about someone's mother by accident")
+
+lesson_repository.save(lesson_1)
+
+lessons = lesson_repository.select_all()
 
 pdb.set_trace()
