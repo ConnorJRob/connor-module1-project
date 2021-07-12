@@ -37,6 +37,14 @@ import repositories.enrolment_repository as enrolment_repository
 # enrolment_repository.save(enrolment_2)
 # enrolment_repository.save(enrolment_3)
 
-enrolment_list = enrolment_repository.select_all()
+# enrolments = enrolment_repository.select_all()
+
+Zimazz_enrolment = enrolment_repository.select(1)
+Eldak_enrolment = enrolment_repository.select(2)
+Grog_enrolment = enrolment_repository.select(3)
+
+What_lesson = enrolment_repository.lesson(Zimazz_enrolment)
+What_lesson_Eldak = enrolment_repository.lesson(Eldak_enrolment)
+What_lesson_Grog = enrolment_repository.lesson(Grog_enrolment)
 
 pdb.set_trace()

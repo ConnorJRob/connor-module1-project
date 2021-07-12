@@ -30,7 +30,27 @@ def select_all():
         enrolments.append(enrolment)
     return enrolments
 
+##select enrolment by id (mostly for testing purposes)
+def select(id):
+    enrolment = None
+    sql = "SELECT * FROM enrolments WHERE id = %s"
+    values = [id]
+    result = run_sql(sql, values)[0]
+
+    if result != None:
+        adventurer = adventurer_repository.select(result['adventurer_id'])
+        lesson = lesson_repository.select(result['lesson_id'])
+        enrolment = Enrolment(adventurer, lesson, result['id'])
+    return enrolment
+
 ##return the lesson associated with a specific enrolment
+def lesson(enrolment):
+    sql = "SELECT * FROM lessons WHERE id = %s"
+    values = [enrolment.lesson.id]
+    results = run_sql(sql, values)[0]
+    lesson = Lesson(results['lesson_name'], results['recommended_for'], results['lesson_description'])
+    return lesson
+
 ##return the adventurer associated with a specific enrolment
 
 #DELETE
