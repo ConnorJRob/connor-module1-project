@@ -35,6 +35,8 @@ def select(id):
         lesson = Lesson(result['lesson_name'], result['recommended_for'], result['lesson_description'], result['id'])
     return lesson
 
+##return all adventurers that have enrolled in a specific lesson
+
 #UPDATE
 ##update lesson
 def update_lesson(lesson):

@@ -30,14 +30,18 @@ import repositories.enrolment_repository as enrolment_repository
 # lesson_repository.save(lesson_3)
 
 # enrolment_1 = Enrolment(adventurer_1, lesson_1)
-# enrolment_2 = Enrolment(adventurer_2, lesson_2)
+# enrolment_2 = Enrolment(adventurer_1, lesson_2)
 # enrolment_3 = Enrolment(adventurer_3, lesson_3)
 
 # enrolment_repository.save(enrolment_1)
 # enrolment_repository.save(enrolment_2)
 # enrolment_repository.save(enrolment_3)
 
-# enrolments = enrolment_repository.select_all()
+Zimazz = adventurer_repository.select(1)
+
+Zimazz_lesson_choices = adventurer_repository.lessons(Zimazz)
+
+enrolments = enrolment_repository.select_all()
 
 # Zimazz_enrolment = enrolment_repository.select(1)
 # Eldak_enrolment = enrolment_repository.select(2)
@@ -51,8 +55,8 @@ import repositories.enrolment_repository as enrolment_repository
 # What_adventurer_2 = enrolment_repository.adventurer(Eldak_enrolment)
 # What_adventurer_3 = enrolment_repository.adventurer(Grog_enrolment)
 
-enrolment_repository.delete_all()
+# enrolment_repository.delete_all()
 
-enrolments = enrolment_repository.select_all()
+# enrolments = enrolment_repository.select_all()
 
 pdb.set_trace()

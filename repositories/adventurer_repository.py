@@ -35,6 +35,19 @@ def select(id):
         adventurer = Adventurer(result['first_name'], result['last_name'], result['adventurer_class'], result['id'])
     return adventurer
 
+##return all lessons that an adventurer has enrolled in
+def lessons(adventurer):
+    lessons = []
+
+    sql = "SELECT lessons.* FROM lessons INNER JOIN enrolments ON enrolments.lesson_id = lessons.id WHERE adventurer_id = %s"
+    values = [adventurer.id]
+    results = run_sql(sql, values)
+
+    for row in results:
+        lesson = Lesson(row['lesson_name'], row['recommended_for'], row['lesson_description'], row['id'])
+        lessons.append(lesson)
+    return lessons
+
 #UPDATE
 ##update adventurer
 def update_adventurer(adventurer):
