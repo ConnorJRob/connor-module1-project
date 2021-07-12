@@ -52,6 +52,12 @@ def lesson(enrolment):
     return lesson
 
 ##return the adventurer associated with a specific enrolment
+def adventurer(enrolment):
+    sql = "SELECT * FROM adventurers WHERE id = %s"
+    values = [enrolment.adventurer.id]
+    results = run_sql(sql, values)[0]
+    adventurer = Adventurer(results['first_name'], results['last_name'], results['adventurer_class'], results['id'])
+    return adventurer
 
 #DELETE
 ##delete all

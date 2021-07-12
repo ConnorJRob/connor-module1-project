@@ -47,4 +47,8 @@ What_lesson = enrolment_repository.lesson(Zimazz_enrolment)
 What_lesson_Eldak = enrolment_repository.lesson(Eldak_enrolment)
 What_lesson_Grog = enrolment_repository.lesson(Grog_enrolment)
 
+What_adventurer_1 = enrolment_repository.adventurer(Zimazz_enrolment)
+What_adventurer_2 = enrolment_repository.adventurer(Eldak_enrolment)
+What_adventurer_3 = enrolment_repository.adventurer(Grog_enrolment)
+
 pdb.set_trace()
