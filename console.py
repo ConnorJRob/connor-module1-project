@@ -8,61 +8,45 @@ import repositories.lesson_repository as lesson_repository
 import repositories.enrolment_repository as enrolment_repository
 
 
-# adventurer_repository.delete_all()
-# lesson_repository.delete_all()
+adventurer_1 = Adventurer("Zimazz", "Greenwind", "Wizard")
+adventurer_repository.save(adventurer_1)
 
-# adventurer_1 = Adventurer("Zimazz", "Greenwind", "Wizard")
-# adventurer_repository.save(adventurer_1)
+adventurer_2 = Adventurer("Eldak", "Belzor", "Ranger")
+adventurer_repository.save(adventurer_2)
 
-# adventurer_2 = Adventurer("Eldak", "Belzor", "Ranger")
-# adventurer_repository.save(adventurer_2)
+adventurer_3 = Adventurer("Grog", "Strongjaw", "Barbarian")
+adventurer_repository.save(adventurer_3)
 
-# adventurer_3 = Adventurer("Grog", "Strongjaw", "Barbarian")
-# adventurer_repository.save(adventurer_3)
+adventurer_4 = Adventurer("Scanlan", "Shorthalt", "Bard")
+adventurer_repository.save(adventurer_4)
 
-# lesson_1 = Lesson("Orcish for Beginners", "Wizards", "A beginner's class in speaking Orcish, making sure to avoid getting killed for saying something about someone's mother by accident")
-# lesson_repository.save(lesson_1)
+adventurer_5 = Adventurer("Pike", "'Trickfoot'", "Cleric")
+adventurer_repository.save(adventurer_5)
 
-# lesson_2 = Lesson("How and when to use Fireball", "Wizards", "Not all the time.")
-# lesson_repository.save(lesson_2)
+adventurer_6 = Adventurer("Jester", "Lavore", "Cleric")
+adventurer_repository.save(adventurer_6)
 
-# lesson_3 = Lesson("When is it a mimic?", "Bards", "Assume always.")
-# lesson_repository.save(lesson_3)
+adventurer_7 = Adventurer("Gregory", "Keenheart", "Paladin")
+adventurer_repository.save(adventurer_7)
 
-# enrolment_1 = Enrolment(adventurer_1, lesson_1)
-# enrolment_2 = Enrolment(adventurer_2, lesson_1)
-# enrolment_3 = Enrolment(adventurer_3, lesson_3)
+adventurer_8 = Adventurer("Craydur", "Rath", "Fighter")
+adventurer_repository.save(adventurer_8)
 
-# enrolment_repository.save(enrolment_1)
-# enrolment_repository.save(enrolment_2)
-# enrolment_repository.save(enrolment_3)
 
-# Orcish_lesson = lesson_repository.select(1)
 
-# Orcish_lesson_attendees = lesson_repository.adventurers(Orcish_lesson)
+lesson_1 = Lesson("Orcish for Beginners", "Wizard", "A beginner's class in speaking Orcish, making sure to avoid getting killed for saying something about someone's mother by accident")
+lesson_repository.save(lesson_1)
 
-# Zimazz = adventurer_repository.select(1)
+lesson_2 = Lesson("How and when to use Fireball", "Wizard", "Not all the time.")
+lesson_repository.save(lesson_2)
 
-# Zimazz_lesson_choices = adventurer_repository.lessons(Zimazz)
+lesson_3 = Lesson("When is it a mimic?", "Bard", "Assume always.")
+lesson_repository.save(lesson_3)
 
-# enrolments = enrolment_repository.select_all()
+lesson_3 = Lesson("Initivate, what is it and what does it matter?", "Cleric", "If you're not fast, you're last")
+lesson_repository.save(lesson_3)
 
-# Zimazz_enrolment = enrolment_repository.select(1)
-# Eldak_enrolment = enrolment_repository.select(2)
-# Grog_enrolment = enrolment_repository.select(3)
 
-# What_lesson = enrolment_repository.lesson(Zimazz_enrolment)
-# What_lesson_Eldak = enrolment_repository.lesson(Eldak_enrolment)
-# What_lesson_Grog = enrolment_repository.lesson(Grog_enrolment)
 
-# What_adventurer_1 = enrolment_repository.adventurer(Zimazz_enrolment)
-# What_adventurer_2 = enrolment_repository.adventurer(Eldak_enrolment)
-# What_adventurer_3 = enrolment_repository.adventurer(Grog_enrolment)
-
-enrolment_repository.delete_all()
-adventurer_repository.delete_all()
-lesson_repository.delete_all()
-
-# enrolments = enrolment_repository.select_all()
 
 # pdb.set_trace()
