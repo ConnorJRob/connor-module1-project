@@ -34,3 +34,22 @@ def create_lesson():
     lesson = Lesson(lesson_name, recommended_for, lesson_description)
     lesson_repository.save(lesson)
     return redirect("/lessons")
+
+# EDIT
+# GET '/adventurers/<id>/edit'
+@lessons_blueprint.route("/lessons/<id>/edit")
+def edit_lesson(id):
+    lesson = lesson_repository.select(id)
+    adventurer_classes = ["Barbarian", "Bard", "Cleric", "Druid", "Fighter", "Monk", "Paladin", "Ranger", "Rogue", "Sorcerer", "Warlock", "Wizard"]
+    return render_template("lessons/edit.html", lesson=lesson, adventurer_classes=adventurer_classes)
+
+# # UPDATE
+# # PUT '/adventurers/<id>'
+@lessons_blueprint.route("/lessons/<id>", methods=['POST'])
+def update_lesson(id):
+    lesson_name = request.form['lesson_name']
+    recommended_for = request.form['recommended_for']
+    lesson_description = request.form['lesson_description']
+    lesson = Lesson(lesson_name, recommended_for, lesson_description, id)
+    lesson_repository.update_lesson(lesson)
+    return redirect("/lessons")

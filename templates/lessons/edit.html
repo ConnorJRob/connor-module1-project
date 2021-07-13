@@ -1,0 +1,37 @@
+{% extends 'base.html'%}
+
+{% block content %}
+<h2>Edit {{lesson.lesson_name}}</h2>
+
+<form action="/lessons/{{lesson.id}}" method="post">
+    <label for="lesson_name">Lesson Name:&nbsp;</label>
+    <input 
+        type="text"
+        name="lesson_name"
+        id="lesson_name"
+        placeholder="Lesson name..."
+        value="{{lesson.lesson_name}}"
+        required>
+
+    <label for="recommended_for">Recommended for:&nbsp;</label>
+    <select
+    id="recommended_for"
+    name="recommended_for">
+    {% for class in adventurer_classes %}
+    <option value={{class}} {% if lesson.recommended_for == class %} selected {% endif %}>{{class}}</option>
+    {% endfor %}
+    </select>
+
+    <label for="lesson_description">Lesson description:&nbsp;</label>
+    <input 
+        type="text"
+        name="lesson_description"
+        id="lesson_description"
+        placeholder="Enter a brief description of what this lesson will involve..."
+        value="{{lesson.lesson_description}}"
+        required>
+
+    <button type="submit">Update Lesson</button>
+
+</form>
+{% endblock %}

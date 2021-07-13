@@ -3,6 +3,16 @@
 {% block content %}
 <h2>{{lesson.lesson_name}}</h2>
 <h3>{{lesson.lesson_description}}</h3>
+<h4>Recommended for:&nbsp;{{lesson.recommended_for}}</h4>
+
+<div>
+    <form action="/lessons/{{lesson.id}}/edit">
+        <button type="submit">
+            Edit {{lesson.lesson_name}}
+        </button>
+    </form>
+    <p></p>
+</div>
 
 <section>
     <div>
