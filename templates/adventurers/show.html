@@ -3,19 +3,30 @@
 {% block content %}
 <h2>{{adventurer.first_name}}&nbsp;{{adventurer.last_name}}</h2>
 <h3>{{adventurer.adventurer_class}}</h3>
-<div>
-    <form action="/adventurers/{{adventurer.id}}/edit">
-        <button type="submit">
-            Edit {{adventurer.first_name}}&nbsp;{{adventurer.last_name}}
-        </button>
-    </form>
-</div>
+<section>
+        <div>
+        <form action="/adventurers/{{adventurer.id}}/edit">
+            <button type="submit">
+                Edit {{adventurer.first_name}}&nbsp;{{adventurer.last_name}}
+            </button>
+        </form>
+        <p></p>
+    </div>
+    <div>
+        <form action="/adventurers/{{adventurer.id}}/delete" method="POST">
+            <button type="submit">
+                Delete {{adventurer.first_name}}&nbsp;{{adventurer.last_name}}
+            </button>
+        </form>
+        <p></p>
+    </div>
+</section>
 
 <section>
     <div>
-        <p>{{adventurer.first_name}}&nbsp;{{adventurer.last_name}} is Enrolled in the following classes:</p>
-        {% for lesson in adventurers %}
-        <a href="/bookings/new">Enrol in another Lesson</a>
+        <p>{{adventurer.first_name}}&nbsp;{{adventurer.last_name}} is Enrolled in the following lessons:</p>
+        {% for lesson in lessons %}
+        <a href="/enrolments">Enrol in another Lesson</a>
         <p></p>
         <div>
             <a href="/adventurers/{{lesson.id}}">{{lesson.lesson_name}}</a>
@@ -24,5 +35,3 @@
         {% endfor %}
 </section>
 {% endblock %}
-
-<!-- <form action="/lessons" method="post"></form> -->

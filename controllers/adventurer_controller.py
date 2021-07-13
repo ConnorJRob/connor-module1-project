@@ -55,3 +55,10 @@ def update_adventurer(id):
     adventurer.adventurer_class = request.form['adventurer-class']
     adventurer_repository.update_adventurer(adventurer)
     return redirect("/adventurers")
+
+# DELETE
+# PUT '/adventurers/<id>/delete'
+@adventurers_blueprint.route("/adventurers/<id>/delete", methods=['POST'])
+def delete_adventurer(id):
+    adventurer_repository.delete_adventurer(id)
+    return redirect("/adventurers")

@@ -47,9 +47,17 @@ def edit_lesson(id):
 # # PUT '/adventurers/<id>'
 @lessons_blueprint.route("/lessons/<id>", methods=['POST'])
 def update_lesson(id):
-    lesson_name = request.form['lesson_name']
-    recommended_for = request.form['recommended_for']
-    lesson_description = request.form['lesson_description']
-    lesson = Lesson(lesson_name, recommended_for, lesson_description, id)
+    lesson = lesson_repository.select(id)
+    lesson.lesson_name = request.form['lesson_name']
+    lesson.recommended_for = request.form['recommended_for']
+    lesson.lesson_description = request.form['lesson_description']
+    lesson = Lesson(lesson.lesson_name, lesson.recommended_for, lesson.lesson_description, id)
     lesson_repository.update_lesson(lesson)
+    return redirect("/lessons")
+
+# DELETE
+# PUT '/adventurers/<id>/delete'
+@lessons_blueprint.route("/lessons/<id>/delete", methods=['POST'])
+def delete_lesson(id):
+    lesson_repository.delete_lesson(id)
     return redirect("/lessons")

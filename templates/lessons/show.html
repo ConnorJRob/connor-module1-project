@@ -5,18 +5,28 @@
 <h3>{{lesson.lesson_description}}</h3>
 <h4>Recommended for:&nbsp;{{lesson.recommended_for}}</h4>
 
-<div>
-    <form action="/lessons/{{lesson.id}}/edit">
-        <button type="submit">
-            Edit {{lesson.lesson_name}}
-        </button>
-    </form>
-    <p></p>
-</div>
+<section>
+    <div>
+        <form action="/lessons/{{lesson.id}}/edit">
+            <button type="submit">
+                Edit {{lesson.lesson_name}}
+            </button>
+        </form>
+        <p></p>
+    </div>
+    <div>
+        <form action="/lessons/{{lesson.id}}/delete" method="post">
+            <button type="submit">
+                Delete {{lesson.lesson_name}}
+            </button>
+        </form>
+        <p></p>
+    </div>
+</section>
 
 <section>
     <div>
-        <a href="/bookings/new">Enrol another Adventurer</a>
+        <a href="/enrolments">Enrol another Adventurer</a>
         <p></p>
         {% for adventurer in adventurers %}
         <div>
