@@ -1,0 +1,24 @@
+{% extends 'base.html'%}
+
+{% block content %}
+
+<h2>Adventurers</h2>
+
+<main>
+    <body>
+        <section>
+            <div>
+                <a href="/adventurers/new">Register New Adventurer</a>
+                <p></p>
+            </div>
+            {% for adventurer in adventurers %}
+            <div>
+                <a href="/adventurer/{{adventurer.id}}">{{adventurer.first_name}}&nbsp;{{adventurer.last_name}}</a>
+                <p></p>
+            </div>
+            {% endfor %}
+        </section>
+    </body>
+</main>
+
+{% endblock %}

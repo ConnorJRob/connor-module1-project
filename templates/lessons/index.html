@@ -1,5 +1,24 @@
 {% extends 'base.html'%}
 
 {% block content %}
-Hello
+
+<h2>Lessons</h2>
+
+<main>
+    <body>
+        <section>
+            <div>
+                <a href="/lessons/new">Create New lesson</a>
+                <p></p>
+            </div>
+            {% for lesson in lessons %}
+            <div>
+                <a href="/lessons/{{lesson.id}}">{{lesson.lesson_name}}</a>
+                <p></p>
+            </div>
+            {% endfor %}
+        </section>
+    </body>
+</main>
+
 {% endblock %}
