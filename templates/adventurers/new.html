@@ -1,0 +1,44 @@
+{% extends 'base.html'%}
+
+{% block content %}
+<h2>New Adventurer</h2>
+
+<form action="/adventurers" method="post">
+    <label for="adventurer-first-name">First Name:&nbsp;</label>
+    <input 
+        type="text"
+        name="adventurer-first-name"
+        id="adventurer-first-name"
+        placeholder="Adventurer's first name..."
+        required>
+
+    <label for="adventurer-last-name">Last Name:&nbsp;</label>
+    <input 
+        type="text"
+        name="adventurer-last-name"
+        id="adventurer-last-name"
+        placeholder="Adventurer's last name..."
+        required>
+
+    <label for="adventurer-class">Class:&nbsp;</label>
+    <select
+    id="adventurer-class"
+    name="adventurer-class">
+    <option value=Barbarian>Barbarian</option>
+    <option value=Bard>Bard</option>
+    <option value=Cleric>Cleric</option>
+    <option value=Druid>Druid</option>
+    <option value=Fighter>Fighter</option>
+    <option value=Monk>Monk</option>
+    <option value=Paladin>Paladin</option>
+    <option value=Ranger>Ranger</option>
+    <option value=Rogue>Rogue</option>
+    <option value=Sorcerer>Sorcerer</option>
+    <option value=Warlock>Warlock</option>
+    <option value=Wizard>Wizard</option>
+    </select>
+
+    <button type="submit">Add to the ranks!</button>
+
+</form>
+{% endblock %}

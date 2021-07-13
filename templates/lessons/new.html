@@ -1,0 +1,44 @@
+{% extends 'base.html'%}
+
+{% block content %}
+<h2>New Adventurer</h2>
+
+<form action="/lessons" method="post">
+    <label for="lesson-name">Lesson Name:&nbsp;</label>
+    <input 
+        type="text"
+        name="lesson-name"
+        id="lesson-name"
+        placeholder="Lesson name..."
+        required>
+
+    <label for="recommended_for">Recommended for:&nbsp;</label>
+    <select
+    id="recommended_for"
+    name="recommended_for">
+    <option value=Barbarian>Barbarians</option>
+    <option value=Bard>Bards</option>
+    <option value=Cleric>Clerics</option>
+    <option value=Druid>Druids</option>
+    <option value=Fighter>Fighters</option>
+    <option value=Monk>Monks</option>
+    <option value=Paladin>Paladins</option>
+    <option value=Ranger>Rangers</option>
+    <option value=Rogue>Rogues</option>
+    <option value=Sorcerer>Sorcerers</option>
+    <option value=Warlock>Warlocks</option>
+    <option value=Wizard>Wizards</option>
+    </select>
+
+    <label for="lesson_description">Lesson description:&nbsp;</label>
+    <input 
+        type="text"
+        name="lesson_description"
+        id="lesson_description"
+        placeholder="Enter a brief description of what this lesson will involve..."
+        required>
+
+    <button type="submit">Create Lesson</button>
+
+</form>
+{% endblock %}
