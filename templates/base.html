@@ -7,8 +7,36 @@
     <title>Beginner's Adventurers Guild</title>
 </head>
 <body>
+    <header>
+        <nav>
+            <ul>
+                <li>
+                    <a href="/">Home</a>
+                </li>
+            </ul>
+        </nav>
+
+        <h1>Beginner's</h1>
+        <h1>Adventurers Guild</h1>
+
+        <nav>
+            <ul>
+                <li>
+                    <a href="/lessons">Lessons</a>
+                </li>
+                <li>
+                    <a href="/adventurers">Adventurers</a>
+                </li>
+                <li>
+                    <a href="/bookings">Bookings</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
     <main>
-        This is the base html
+        {% block content %}
+
+        {% endblock%}
     </main>
     
 </body>
