@@ -1,11 +1,24 @@
 {% extends 'base.html'%}
 
 {% block content %}
-<h2>{{lesson.lesson_name}}</h2>
-<h3>{{lesson.lesson_description}}</h3>
+<h2>Lesson name: {{lesson.lesson_name}}</h2>
+<h3>Description: {{lesson.lesson_description}}</h3>
 <h4>Recommended for:&nbsp;{{lesson.recommended_for}}</h4>
 
-<section>
+<section class="objects_list">
+    <div>
+        <a href="/enrolments">Enrol another Adventurer</a>
+        <p></p>
+    </div>
+        {% for adventurer in adventurers %}
+    <div>
+        <a href="/adventurers/{{adventurer.id}}">{{adventurer.first_name}}&nbsp;{{adventurer.last_name}}</a>
+        <p></p>
+    </div>
+        {% endfor %}
+</section>
+
+<section class="edit_delete_buttons"> 
     <div>
         <form action="/lessons/{{lesson.id}}/edit">
             <button type="submit">
@@ -24,15 +37,4 @@
     </div>
 </section>
 
-<section class="objects_list">
-    <div>
-        <a href="/enrolments">Enrol another Adventurer</a>
-        <p></p>
-        {% for adventurer in adventurers %}
-    <div>
-        <a href="/adventurers/{{adventurer.id}}">{{adventurer.first_name}}&nbsp;{{adventurer.last_name}}</a>
-        <p></p>
-    </div>
-        {% endfor %}
-</section>
 {% endblock %}

@@ -1,37 +1,39 @@
 {% extends 'base.html'%}
 
 {% block content %}
-<h2>{{adventurer.first_name}}&nbsp;{{adventurer.last_name}}</h2>
-<h3>{{adventurer.adventurer_class}}</h3>
-<section>
-        <div>
-        <form action="/adventurers/{{adventurer.id}}/edit">
-            <button type="submit">
-                Edit {{adventurer.first_name}}&nbsp;{{adventurer.last_name}}
-            </button>
-        </form>
-        <p></p>
-    </div>
-    <div>
-        <form action="/adventurers/{{adventurer.id}}/delete" method="post">
-            <button type="submit">
-                Delete {{adventurer.first_name}}&nbsp;{{adventurer.last_name}}
-            </button>
-        </form>
-        <p></p>
-    </div>
-</section>
+<h2>Name: {{adventurer.first_name}}&nbsp;{{adventurer.last_name}}</h2>
+<h3>Class: {{adventurer.adventurer_class}}</h3>
 
 <p>{{adventurer.first_name}}&nbsp;{{adventurer.last_name}} is Enrolled in the following lessons:</p>
 <section class="objects_list">
-    <div>
-        <a href="/enrolments">Enrol in another Lesson</a>
-        <p></p>
+        <div>
+            <a href="/enrolments">Enrol in another Lesson</a>
+            <p></p>
+        </div>
         {% for lesson in lessons %}
         <div>
             <a href="/lessons/{{lesson.id}}">{{lesson.lesson_name}}</a>
             <p></p>
         </div>
         {% endfor %}
+</section>
+
+<section class="edit_delete_buttons">
+    <div>
+    <form action="/adventurers/{{adventurer.id}}/edit">
+        <button type="submit">
+            Edit {{adventurer.first_name}}&nbsp;{{adventurer.last_name}}
+        </button>
+    </form>
+    <p></p>
+</div>
+<div>
+    <form action="/adventurers/{{adventurer.id}}/delete" method="post">
+        <button type="submit">
+            Delete {{adventurer.first_name}}&nbsp;{{adventurer.last_name}}
+        </button>
+    </form>
+    <p></p>
+</div>
 </section>
 {% endblock %}

@@ -5,24 +5,28 @@
     <body>
         <h2>Enroll an Adventurer into one of the classes</h2>
 
-        <form action = "/enrolments/new" method="POST">
+        <form action = "/enrolments/new" method="POST" class="enrolling">
+            <section class="adventurer_input">
             <label for="adventurer">Adventurer:&nbsp;</label>
-            <select
-                id="adventurer"
-                name="adventurer">
-                {% for adventurer in adventurers %}
-                <option value={{adventurer.id}}>{{adventurer.first_name}}&nbsp;{{adventurer.last_name}}</option>
-                {% endfor %}
-            </select>
-            <label for="lesson">Lesson:&nbsp;</label>
-            <select
-                id="lesson"
-                name="lesson">
-                {% for lesson in lessons %}
-                <option value={{lesson.id}}>{{lesson.lesson_name}}</option>
-                {% endfor %}
-            </select>
-            <button type="submit">Enroll!</button>
+                <select
+                    id="adventurer"
+                    name="adventurer">
+                    {% for adventurer in adventurers %}
+                    <option value={{adventurer.id}}>{{adventurer.first_name}}&nbsp;{{adventurer.last_name}}</option>
+                    {% endfor %}
+                </select>
+            </section>
+            <section class="lesson_input">
+                <label for="lesson">Lesson:&nbsp;</label>
+                <select
+                    id="lesson"
+                    name="lesson">
+                    {% for lesson in lessons %}
+                    <option value={{lesson.id}}>{{lesson.lesson_name}}</option>
+                    {% endfor %}
+                </select>
+            </section>
+            <button type="submit" class="enroll_button">Enroll!</button>
         </form>
     </body>
 </main>

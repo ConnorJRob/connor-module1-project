@@ -40,6 +40,7 @@ main{
 
 .portals {
     display: flex;
+    margin: auto;
 }
 
 .portals li {
@@ -50,6 +51,10 @@ main{
     border: 1px solid blue;
 }
 
+.portals li:hover {
+    background-color: lightblue;
+}
+
 .objects_list{
     display: flex;
     flex-wrap: wrap;
@@ -57,4 +62,34 @@ main{
 
 .objects_list div{
     margin-right: 15px;
+    border: 1px solid blue;
+    padding: 15px;
+    margin: 5px;
+}
+
+.objects_list div:hover{
+    background-color: lightblue;
+}
+
+.edit_delete_buttons{
+    margin-top: 20px;
+    display: flex;
+}
+
+.edit_delete_buttons div{
+    margin-right: 15px;
+}
+
+.adventurer_input{
+    margin-bottom: 15px;
+    margin-left: 30%;
+}
+
+.lesson_input{
+    margin-bottom: 15px;
+    margin-left: 30%;
+}
+
+.enroll_button{
+    margin-left: 30%;
 }
