@@ -20,7 +20,7 @@ adventurer_repository.save(adventurer_3)
 adventurer_4 = Adventurer("Scanlan", "Shorthalt", "Bard")
 adventurer_repository.save(adventurer_4)
 
-adventurer_5 = Adventurer("Pike", "'Trickfoot'", "Cleric")
+adventurer_5 = Adventurer("Pike", "Trickfoot", "Cleric")
 adventurer_repository.save(adventurer_5)
 
 adventurer_6 = Adventurer("Jester", "Lavore", "Cleric")

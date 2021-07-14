@@ -30,9 +30,9 @@ def new_adventurer():
 # POST '/adventurers'
 @adventurers_blueprint.route("/adventurers", methods=['POST'])
 def create_adventurer():
-    first_name = request.form['adventurer-first-name']
-    last_name = request.form['adventurer-last-name']
-    adventurer_class = request.form['adventurer-class']
+    first_name = request.form['adventurer_first_name']
+    last_name = request.form['adventurer_last_name']
+    adventurer_class = request.form['adventurer_class']
     adventurer = Adventurer(first_name, last_name, adventurer_class)
     adventurer_repository.save(adventurer)
     return redirect("/adventurers")
@@ -50,9 +50,9 @@ def edit_adventurer(id):
 @adventurers_blueprint.route("/adventurers/<id>", methods=['POST'])
 def update_adventurer(id):
     adventurer = adventurer_repository.select(id)
-    adventurer.first_name = request.form['adventurer-first-name']
-    adventurer.last_name = request.form['adventurer-last-name']
-    adventurer.adventurer_class = request.form['adventurer-class']
+    adventurer.first_name = request.form['adventurer_first_name']
+    adventurer.last_name = request.form['adventurer_last_name']
+    adventurer.adventurer_class = request.form['adventurer_class']
     adventurer_repository.update_adventurer(adventurer)
     return redirect("/adventurers")
 

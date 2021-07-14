@@ -4,28 +4,28 @@
 <h2>Edit {{adventurer.first_name}}&nbsp;{{adventurer.last_name}}</h2>
 
 <form action="/adventurers/{{adventurer.id}}" method="post">
-    <label for="adventurer-first-name">First Name:&nbsp;</label>
+    <label for="adventurer_first_name">First Name:&nbsp;</label>
     <input 
         type="text"
-        name="adventurer-first-name"
-        id="adventurer-first-name"
+        name="adventurer_first_name"
+        id="adventurer_first_name"
         placeholder="Adventurer's first name..."
         value="{{adventurer.first_name}}"
         required>
 
-    <label for="adventurer-last-name">Last Name:&nbsp;</label>
+    <label for="adventurer_last_name">Last Name:&nbsp;</label>
     <input 
         type="text"
-        name="adventurer-last-name"
-        id="adventurer-last-name"
+        name="adventurer_last_name"
+        id="adventurer_last_name"
         placeholder="Adventurer's last name..."
         value="{{adventurer.last_name}}"
         required>
 
     <label for="adventurer-class">Class:&nbsp;</label>
     <select
-    id="adventurer-class"
-    name="adventurer-class">
+    id="adventurer_class"
+    name="adventurer_class">
     {% for class in adventurer_classes %}
     <option value={{class}} {% if adventurer.adventurer_class == class %} selected {% endif %}>{{class}}</option>
     {% endfor %}

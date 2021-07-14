@@ -28,7 +28,7 @@ def new_lesson():
 # POST '/lessons'
 @lessons_blueprint.route("/lessons", methods=['POST'])
 def create_lesson():
-    lesson_name = request.form['lesson-name']
+    lesson_name = request.form['lesson_name']
     recommended_for = request.form['recommended_for']
     lesson_description = request.form['lesson_description']
     lesson = Lesson(lesson_name, recommended_for, lesson_description)
