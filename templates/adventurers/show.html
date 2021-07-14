@@ -13,7 +13,7 @@
         <p></p>
     </div>
     <div>
-        <form action="/adventurers/{{adventurer.id}}/delete" method="POST">
+        <form action="/adventurers/{{adventurer.id}}/delete" method="post">
             <button type="submit">
                 Delete {{adventurer.first_name}}&nbsp;{{adventurer.last_name}}
             </button>
@@ -22,14 +22,14 @@
     </div>
 </section>
 
-<section>
+<p>{{adventurer.first_name}}&nbsp;{{adventurer.last_name}} is Enrolled in the following lessons:</p>
+<section class="objects_list">
     <div>
-        <p>{{adventurer.first_name}}&nbsp;{{adventurer.last_name}} is Enrolled in the following lessons:</p>
-        {% for lesson in lessons %}
         <a href="/enrolments">Enrol in another Lesson</a>
         <p></p>
+        {% for lesson in lessons %}
         <div>
-            <a href="/adventurers/{{lesson.id}}">{{lesson.lesson_name}}</a>
+            <a href="/lessons/{{lesson.id}}">{{lesson.lesson_name}}</a>
             <p></p>
         </div>
         {% endfor %}

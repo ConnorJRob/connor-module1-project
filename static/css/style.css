@@ -1,0 +1,60 @@
+.base_header {
+    display: flex;
+    width: 75%;
+    margin: auto;
+}
+
+li {
+    list-style: none;
+}
+
+.nav_bar {
+    display: flex;
+
+}
+
+.nav_bar li {
+    margin-right: 15px;
+}
+
+#website_title {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin: auto;
+}
+
+#website_title h1{
+    margin: 5px;
+}
+
+#pt_1{
+    font-size: medium;
+    font-style: italic;
+}
+
+main{
+    width: 85%;
+    margin: 0 auto;
+}
+
+.portals {
+    display: flex;
+}
+
+.portals li {
+    margin-right: 30px;
+    margin: auto;
+    padding: 20px;
+    width: 80px;
+    border: 1px solid blue;
+}
+
+.objects_list{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.objects_list div{
+    margin-right: 15px;
+}

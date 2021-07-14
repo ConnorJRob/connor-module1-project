@@ -32,8 +32,9 @@ def create_lesson():
     recommended_for = request.form['recommended_for']
     lesson_description = request.form['lesson_description']
     lesson = Lesson(lesson_name, recommended_for, lesson_description)
-    lesson_repository.save(lesson)
-    return redirect("/lessons")
+    saved_lesson = lesson_repository.save(lesson)
+    return_location="/lessons/"+str(saved_lesson.id)
+    return redirect(return_location)
 
 # EDIT
 # GET '/adventurers/<id>/edit'
@@ -52,8 +53,10 @@ def update_lesson(id):
     lesson.recommended_for = request.form['recommended_for']
     lesson.lesson_description = request.form['lesson_description']
     lesson = Lesson(lesson.lesson_name, lesson.recommended_for, lesson.lesson_description, id)
-    lesson_repository.update_lesson(lesson)
-    return redirect("/lessons")
+    updated_lesson = lesson_repository.update_lesson(lesson)
+    return_location = "/lessons/"+str(updated_lesson.id)
+    return redirect(return_location)
+
 
 # DELETE
 # PUT '/adventurers/<id>/delete'

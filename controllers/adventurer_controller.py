@@ -34,8 +34,9 @@ def create_adventurer():
     last_name = request.form['adventurer_last_name']
     adventurer_class = request.form['adventurer_class']
     adventurer = Adventurer(first_name, last_name, adventurer_class)
-    adventurer_repository.save(adventurer)
-    return redirect("/adventurers")
+    saved_adventurer = adventurer_repository.save(adventurer)
+    return_location="/adventurers/"+str(saved_adventurer.id)
+    return redirect(return_location)
 
 # EDIT
 # GET '/adventurers/<id>/edit'
@@ -53,8 +54,9 @@ def update_adventurer(id):
     adventurer.first_name = request.form['adventurer_first_name']
     adventurer.last_name = request.form['adventurer_last_name']
     adventurer.adventurer_class = request.form['adventurer_class']
-    adventurer_repository.update_adventurer(adventurer)
-    return redirect("/adventurers")
+    updated_adventurer = adventurer_repository.update_adventurer(adventurer)
+    return_location ="/adventurers/"+str(updated_adventurer.id)
+    return redirect(return_location)
 
 # DELETE
 # PUT '/adventurers/<id>/delete'

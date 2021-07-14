@@ -53,6 +53,7 @@ def update_adventurer(adventurer):
     sql = "UPDATE adventurers SET (first_name, last_name, adventurer_class) = (%s, %s, %s) WHERE id = %s"
     values = [adventurer.first_name, adventurer.last_name, adventurer.adventurer_class, adventurer.id]
     run_sql(sql, values)
+    return adventurer
 
 #DELETE
 ##delete all

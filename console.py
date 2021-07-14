@@ -33,7 +33,6 @@ adventurer_8 = Adventurer("Craydur", "Rath", "Fighter")
 adventurer_repository.save(adventurer_8)
 
 
-
 lesson_1 = Lesson("Orcish for Beginners", "Wizard", "A beginner's class in speaking Orcish, making sure to avoid getting killed for saying something about someone's mother by accident")
 lesson_repository.save(lesson_1)
 

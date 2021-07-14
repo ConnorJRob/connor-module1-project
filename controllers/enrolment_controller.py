@@ -26,4 +26,5 @@ def create_enrolment():
     lesson = lesson_repository.select(lesson_id)
     enrolment = Enrolment(adventurer, lesson)
     enrolment_repository.save(enrolment)
-    return redirect("/")
+    return_location="/lessons/"+str(lesson_id)
+    return redirect(return_location)

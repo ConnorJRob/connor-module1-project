@@ -24,15 +24,15 @@
     </div>
 </section>
 
-<section>
+<section class="objects_list">
     <div>
         <a href="/enrolments">Enrol another Adventurer</a>
         <p></p>
         {% for adventurer in adventurers %}
-        <div>
-            <a href="/adventurers/{{adventurer.id}}">{{adventurer.first_name}}&nbsp;{{adventurer.last_name}}</a>
-            <p></p>
-        </div>
+    <div>
+        <a href="/adventurers/{{adventurer.id}}">{{adventurer.first_name}}&nbsp;{{adventurer.last_name}}</a>
+        <p></p>
+    </div>
         {% endfor %}
 </section>
 {% endblock %}

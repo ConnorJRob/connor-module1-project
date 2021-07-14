@@ -55,6 +55,7 @@ def update_lesson(lesson):
     sql = "UPDATE lessons SET (lesson_name, recommended_for, lesson_description) = (%s, %s, %s) WHERE id = %s"
     values = [lesson.lesson_name, lesson.recommended_for, lesson.lesson_description, lesson.id]
     run_sql(sql, values)
+    return lesson
 
 
 #DELETE
